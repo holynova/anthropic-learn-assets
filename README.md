@@ -2,6 +2,10 @@
 
 A collection of SVG icons and color palette extracted from Anthropic's Learn pages.
 
+## Live Demo
+
+**View the interactive showcase:** https://holynova.github.io/anthropic-learn-assets/
+
 ## Overview
 
 This project contains visual design assets from [Anthropic Learn](https://www.anthropic.com/learn), including:
@@ -18,6 +22,22 @@ anthropic_learn_assets/
 ├── color_palette.json        # Complete color palette in JSON format
 ├── color_palette_display.html # Interactive HTML showcase of all icons and colors
 └── svgs/                     # Individual SVG icon files (29 total)
+```
+
+## Quick Start
+
+### View Online
+
+Visit the live demo: **https://holynova.github.io/anthropic-learn-assets/**
+
+### View Locally
+
+Clone the repository and open the HTML file:
+
+```bash
+git clone https://github.com/holynova/anthropic-learn-assets.git
+cd anthropic-learn-assets
+open color_palette_display.html
 ```
 
 ## Pages Visited
@@ -136,6 +156,8 @@ The following font families are used in the Anthropic design system:
 
 Open `color_palette_display.html` in any modern web browser to view an interactive showcase of all icons and colors.
 
+Or visit the **live demo:** https://holynova.github.io/anthropic-learn-assets/
+
 ### Use Individual SVG Icons
 
 Each SVG icon can be found in the `svgs/` directory and used independently:
@@ -161,6 +183,13 @@ Or inline:
   border-color: #87867f; /* slate-500 */
 }
 ```
+
+## Deployment
+
+This project uses GitHub Actions to automatically deploy to GitHub Pages on every push to `main`.
+
+- **Live Demo:** https://holynova.github.io/anthropic-learn-assets/
+- **GitHub Pages Settings:** https://github.com/holynova/anthropic-learn-assets/settings/pages
 
 ## License
 
