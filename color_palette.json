@@ -1,0 +1,120 @@
+{
+  "source": "https://www.anthropic.com/learn",
+  "description": "Anthropic Learn page color palette and icons extracted from CSS custom properties",
+  "pages_visited": [
+    "https://www.anthropic.com/learn",
+    "https://www.anthropic.com/learn/build-with-claude",
+    "https://www.anthropic.com/learn/claude-for-work",
+    "https://www.anthropic.com/learn/claude-for-you",
+    "https://www.anthropic.com/research",
+    "https://www.anthropic.com/news"
+  ],
+  "colors": {
+    "slate_scale": {
+      "name": "Slate Scale (Neutral)",
+      "values": [
+        {"variable": "--color-slate-050", "hex": "#faf9f5", "rgb": "rgb(250, 249, 245)"},
+        {"variable": "--color-slate-100", "hex": "#f5f4ed", "rgb": "rgb(245, 244, 237)"},
+        {"variable": "--color-slate-150", "hex": "#f0eee6", "rgb": "rgb(240, 238, 230)"},
+        {"variable": "--color-slate-200", "hex": "#e8e6dc", "rgb": "rgb(232, 230, 220)"},
+        {"variable": "--color-slate-250", "hex": "#dedcd1", "rgb": "rgb(222, 220, 209)"},
+        {"variable": "--color-slate-300", "hex": "#d1cfc5", "rgb": "rgb(209, 207, 197)"},
+        {"variable": "--color-slate-350", "hex": "#c2c0b6", "rgb": "rgb(194, 192, 182)"},
+        {"variable": "--color-slate-400", "hex": "#b0aea5", "rgb": "rgb(176, 174, 165)"},
+        {"variable": "--color-slate-450", "hex": "#9c9a92", "rgb": "rgb(156, 154, 146)"},
+        {"variable": "--color-slate-500", "hex": "#87867f", "rgb": "rgb(135, 134, 127)"},
+        {"variable": "--color-slate-550", "hex": "#73726c", "rgb": "rgb(115, 114, 108)"},
+        {"variable": "--color-slate-600", "hex": "#5e5d59", "rgb": "rgb(94, 93, 89)"},
+        {"variable": "--color-slate-650", "hex": "#4d4c48", "rgb": "rgb(77, 76, 72)"},
+        {"variable": "--color-slate-700", "hex": "#3d3d3a", "rgb": "rgb(61, 61, 58)"},
+        {"variable": "--color-slate-750", "hex": "#30302e", "rgb": "rgb(48, 48, 46)"},
+        {"variable": "--color-slate-800", "hex": "#262624", "rgb": "rgb(38, 38, 36)"},
+        {"variable": "--color-slate-850", "hex": "#1f1e1d", "rgb": "rgb(31, 30, 29)"},
+        {"variable": "--color-slate-900", "hex": "#1a1918", "rgb": "rgb(26, 25, 24)"},
+        {"variable": "--color-slate-950", "hex": "#141413", "rgb": "rgb(20, 20, 19)"},
+        {"variable": "--color-slate-1000", "hex": "#0f0f0e", "rgb": "rgb(15, 15, 14)"}
+      ]
+    },
+    "accent_colors": {
+      "name": "Accent Colors",
+      "values": [
+        {"variable": "--color-light", "hex": "#ffffff", "rgb": "rgb(255, 255, 255)"},
+        {"variable": "--color-dark", "hex": "#0f0f0e", "rgb": "rgb(15, 15, 14)"},
+        {"variable": "--color-slate-dark", "hex": "#141413", "rgb": "rgb(20, 20, 19)"},
+        {"variable": "--color-oat", "hex": "#e3dacc", "rgb": "rgb(227, 218, 204)"},
+        {"variable": "--color-coral", "hex": "#ebcece", "rgb": "rgb(235, 206, 206)"},
+        {"variable": "--color-clay", "hex": "#d97757", "rgb": "rgb(217, 119, 87)"},
+        {"variable": "--color-cactus", "hex": "#bcd1ca", "rgb": "rgb(188, 209, 202)"},
+        {"variable": "--color-fig", "hex": "#c46686", "rgb": "rgb(196, 102, 134)"},
+        {"variable": "--color-sky", "hex": "#6a9bcc", "rgb": "rgb(106, 155, 204)"},
+        {"variable": "--color-olive", "hex": "#788c5d", "rgb": "rgb(120, 140, 93)"},
+        {"variable": "--color-heather", "hex": "#cbcadb", "rgb": "rgb(203, 202, 219)"}
+      ]
+    },
+    "semantic_colors": {
+      "name": "Semantic Colors",
+      "values": [
+        {"variable": "--color-error", "hex": "#bf4d43", "rgb": "rgb(191, 77, 67)"},
+        {"variable": "--color-focus", "hex": "#2c84db", "rgb": "rgb(44, 132, 219)"}
+      ]
+    }
+  },
+  "typography": {
+    "font_families": [
+      {"variable": "--anthropic-sans", "value": "anthropicSans"},
+      {"variable": "--anthropic-serif", "value": "anthropicSerif"},
+      {"variable": "--anthropic-mono", "value": "anthropicMono"},
+      {"variable": "--styrene-a", "value": "styreneA"},
+      {"variable": "--styrene-b", "value": "styreneB"},
+      {"variable": "--tiempos-text", "value": "tiemposText"},
+      {"variable": "--copernicus", "value": "copernicus"},
+      {"variable": "--jetbrains-mono", "value": "jetBrainsMono"}
+    ]
+  },
+  "svg_icons": {
+    "description": "SVG icons downloaded from Anthropic Learn pages",
+    "count": 29,
+    "icons": [
+      {"filename": "puzzle_piece_main.svg", "source": "Main Learn page", "description": "Interlocking puzzle piece with complex geometric shape"},
+      {"filename": "hand_network_main.svg", "source": "Main Learn page", "description": "Hand with connecting network nodes and lines"},
+      {"filename": "hand_flower_main.svg", "source": "Main Learn page", "description": "Hand with organic flower petals emerging from palm"},
+      {"filename": "puzzle_piece.svg", "source": "Build with Claude page", "description": "Interlocking puzzle piece (smaller version)"},
+      {"filename": "sun_model.svg", "source": "Build with Claude page", "description": "Sun with circular center and radiating pointed rays"},
+      {"filename": "geometric_apis.svg", "source": "Build with Claude page", "description": "Geometric shapes including triangle and circle"},
+      {"filename": "speech_bubbles.svg", "source": "Build with Claude page", "description": "Two overlapping speech bubble outlines"},
+      {"filename": "ai_hand.svg", "source": "Build with Claude page", "description": "Stylized hand with interconnected digital nodes"},
+      {"filename": "connected_nodes.svg", "source": "Build with Claude page", "description": "Square with connected circular nodes on corners"},
+      {"filename": "coding_window.svg", "source": "Build with Claude page", "description": "Computer window with coding brackets and slash symbols"},
+      {"filename": "hand_geometric.svg", "source": "Build with Claude page", "description": "Black outline of hand arranging geometric shapes"},
+      {"filename": "lightbulb.svg", "source": "Build with Claude page", "description": "Light bulb with star-shaped filament"},
+      {"filename": "document_search.svg", "source": "Build with Claude page", "description": "Document with magnifying glass"},
+      {"filename": "pencil_nodes.svg", "source": "Build with Claude page", "description": "Pencil connecting two circular nodes"},
+      {"filename": "bar_chart.svg", "source": "Build with Claude page", "description": "Connected dots forming bar chart structure"},
+      {"filename": "grid_pattern.svg", "source": "Build with Claude page", "description": "Grid pattern with square element"},
+      {"filename": "eye_hand.svg", "source": "Build with Claude page", "description": "Outline of hand forming circle shape with eye symbol"},
+      {"filename": "cursor_nodes.svg", "source": "Build with Claude page", "description": "Cursor arrow with connected nodes"},
+      {"filename": "seedling.svg", "source": "Build with Claude page", "description": "Young plant seedling with stem and two leaves on soil surface"},
+      {"filename": "hand_network_sm.svg", "source": "Claude for Work page", "description": "Hand with connecting network nodes (smaller version)"},
+      {"filename": "seedling_work.svg", "source": "Claude for Work page", "description": "Young plant seedling (duplicate)"},
+      {"filename": "two_hands_holding.svg", "source": "Claude for Work page", "description": "Two hands from opposite directions holding cylindrical object"},
+      {"filename": "quill_pen.svg", "source": "Claude for Work page", "description": "Ornate quill pen with detailed handle"},
+      {"filename": "magnifying_glass.svg", "source": "Claude for Work page", "description": "Magnifying glass with connected nodes"},
+      {"filename": "document_icon.svg", "source": "Claude for Work page", "description": "Document icon with connected nodes on corners"},
+      {"filename": "infographic.svg", "source": "Claude for Work page", "description": "Infographic with geometric shapes and black graphic elements"},
+      {"filename": "column.svg", "source": "Claude for Personal page", "description": "Classical stone column with architectural details"},
+      {"filename": "glasswing_logo.svg", "source": "News page", "description": "Project Glasswing logo"},
+      {"filename": "trustworthy_agents.svg", "source": "Research page", "description": "Trustworthy agents in practice"}
+    ]
+  },
+  "svg_colors": {
+    "description": "Colors found in SVG icons on the page",
+    "values": [
+      {"hex": "#000000", "rgb": "rgb(0, 0, 0)"},
+      {"hex": "#faf9f7", "rgb": "rgb(250, 249, 247)"},
+      {"hex": "#181818", "rgb": "rgb(24, 24, 24)"},
+      {"hex": "#141413", "rgb": "rgb(20, 20, 19)"},
+      {"hex": "#0f0f0e", "rgb": "rgb(15, 15, 14)"},
+      {"hex": "#535146", "rgb": "rgb(83, 81, 70)"}
+    ]
+  }
+}
