@@ -1,0 +1,51 @@
+{
+  "source": "https://www.anthropic.com/learn",
+  "description": "Anthropic Learn color palette - CSS, Tailwind, SCSS, Figma formats available",
+  "slate": {
+    "050": "#faf9f5",
+    "100": "#f5f4ed",
+    "150": "#f0eee6",
+    "200": "#e8e6dc",
+    "250": "#dedcd1",
+    "300": "#d1cfc5",
+    "350": "#c2c0b6",
+    "400": "#b0aea5",
+    "450": "#9c9a92",
+    "500": "#87867f",
+    "550": "#73726c",
+    "600": "#5e5d59",
+    "650": "#4d4c48",
+    "700": "#3d3d3a",
+    "750": "#30302e",
+    "800": "#262624",
+    "850": "#1f1e1d",
+    "900": "#1a1918",
+    "950": "#141413",
+    "1000": "#0f0f0e"
+  },
+  "accent": {
+    "light": "#ffffff",
+    "dark": "#0f0f0e",
+    "slate-dark": "#141413",
+    "oat": "#e3dacc",
+    "coral": "#ebcece",
+    "clay": "#d97757",
+    "cactus": "#bcd1ca",
+    "fig": "#c46686",
+    "sky": "#6a9bcc",
+    "olive": "#788c5d",
+    "heather": "#cbcadb"
+  },
+  "semantic": {
+    "error": "#bf4d43",
+    "focus": "#2c84db"
+  },
+  "svgColors": {
+    "black": "#000000",
+    "cream": "#faf9f7",
+    "charcoal": "#181818",
+    "ink": "#141413",
+    "nearBlack": "#0f0f0e",
+    "moss": "#535146"
+  }
+}

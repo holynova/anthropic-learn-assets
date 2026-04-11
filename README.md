@@ -6,6 +6,17 @@ A collection of SVG icons and color palette extracted from Anthropic's Learn pag
 
 **View the interactive showcase:** https://holynova.github.io/anthropic-learn-assets/
 
+## Quick Export
+
+Visit the demo page and use the **one-click export buttons** at the top to download:
+
+- **Export All (ZIP)** - Complete package with all SVGs + all color formats
+- **SVGs Only** - All 29 SVG icons in a ZIP file
+- **Colors Only** - All color configurations (CSS, SCSS, Tailwind, JSON, Figma, Android)
+- **CSS Only** - CSS custom properties
+- **Tailwind Config** - Tailwind CSS color configuration
+- **JSON Only** - Simple JSON color format
+
 ## Overview
 
 This project contains visual design assets from [Anthropic Learn](https://www.anthropic.com/learn), including:
@@ -19,9 +30,21 @@ This project contains visual design assets from [Anthropic Learn](https://www.an
 ```
 anthropic_learn_assets/
 ├── README.md                 # This file
-├── color_palette.json        # Complete color palette in JSON format
-├── color_palette_display.html # Interactive HTML showcase of all icons and colors
-└── svgs/                     # Individual SVG icon files (29 total)
+├── index.html                # Interactive HTML showcase with export buttons
+├── color_palette.json       # Color palette in JSON format
+├── css/
+│   └── colors.css           # CSS custom properties
+├── scss/
+│   └── colors.scss          # SCSS/Sass variables
+├── tailwind/
+│   └── colors.js            # Tailwind CSS config
+├── json/
+│   └── colors.json          # Simple JSON format
+├── figma/
+│   └── tokens.json          # Figma design tokens format
+├── android/
+│   └── colors.xml           # Android XML resources
+└── svgs/                    # Individual SVG icon files (29 total)
 ```
 
 ## Quick Start
@@ -37,8 +60,21 @@ Clone the repository and open the HTML file:
 ```bash
 git clone https://github.com/holynova/anthropic-learn-assets.git
 cd anthropic-learn-assets
-open color_palette_display.html
+open index.html
 ```
+
+## Export Formats
+
+The project includes color configurations in multiple formats:
+
+| Format | File | Description |
+|--------|------|-------------|
+| CSS | `css/colors.css` | CSS custom properties (`:root` variables) |
+| SCSS | `scss/colors.scss` | SCSS/Sass variables with map |
+| Tailwind | `tailwind/colors.js` | Tailwind CSS theme extension config |
+| JSON | `json/colors.json` | Simple key-value JSON |
+| Figma | `figma/tokens.json` | Figma design tokens format |
+| Android | `android/colors.xml` | Android XML color resources |
 
 ## Pages Visited
 
@@ -137,26 +173,12 @@ The following SVG icons are available in the `svgs/` directory:
 | trustworthy_agents.svg | Trustworthy agents illustration | Research |
 | two_hands_holding.svg | Two hands holding cylindrical object | Claude for Work |
 
-## Typography
-
-The following font families are used in the Anthropic design system:
-
-- `--anthropic-sans` - anthropicSans
-- `--anthropic-serif` - anthropicSerif
-- `--anthropic-mono` - anthropicMono
-- `--styrene-a` - styreneA
-- `--styrene-b` - styreneB
-- `--tiempos-text` - tiemposText
-- `--copernicus` - copernicus
-- `--jetbrains-mono` - jetBrainsMono
-
 ## Usage
 
-### View the Color Palette
+### View the Interactive Demo
 
-Open `color_palette_display.html` in any modern web browser to view an interactive showcase of all icons and colors.
-
-Or visit the **live demo:** https://holynova.github.io/anthropic-learn-assets/
+Open `index.html` in any modern web browser or visit:
+**https://holynova.github.io/anthropic-learn-assets/**
 
 ### Use Individual SVG Icons
 
@@ -181,6 +203,25 @@ Or inline:
   color: #d97757; /* clay */
   background-color: #faf9f5; /* slate-050 */
   border-color: #87867f; /* slate-500 */
+}
+```
+
+### Use Colors in Tailwind
+
+```js
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        clay: '#d97757',
+        slate: {
+          50: '#faf9f5',
+          // ...
+        }
+      }
+    }
+  }
 }
 ```
 
