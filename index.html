@@ -76,6 +76,32 @@
         .icon-name { font-size: 13px; font-weight: 600; color: #141413; margin-bottom: 4px; }
         .icon-source { font-size: 11px; color: #87867f; margin-bottom: 4px; }
         .icon-desc { font-size: 12px; color: #5e5d59; line-height: 1.4; }
+
+        .section-desc { color: #5e5d59; margin-bottom: 24px; font-size: 15px; }
+        .style-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .style-card { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .style-label { font-size: 12px; color: #87867f; margin-bottom: 4px; }
+        .style-value { font-size: 14px; font-weight: 600; color: #141413; }
+        .style-tags { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+        .style-tag { background: #e8e6dc; color: #3d3d3a; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; }
+        .motifs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .motif-card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); text-align: center; }
+        .motif-icon { font-size: 32px; margin-bottom: 12px; }
+        .motif-name { font-size: 14px; font-weight: 600; color: #141413; margin-bottom: 4px; }
+        .motif-desc { font-size: 12px; color: #5e5d59; }
+        .prompts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .prompt-card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .prompt-card-large { grid-column: 1 / -1; }
+        .prompt-title { font-size: 14px; font-weight: 600; color: #141413; margin-bottom: 8px; }
+        .prompt-text { font-size: 13px; color: #5e5d59; line-height: 1.6; background: #f5f4ed; padding: 12px; border-radius: 8px; }
+        .comparison-table { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .comparison-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 12px 16px; border-bottom: 1px solid #e8e6dc; }
+        .comparison-row:last-child { border-bottom: none; }
+        .comparison-row > div:first-child { font-weight: 600; color: #141413; }
+        .comparison-row > div:not(:first-child) { color: #5e5d59; font-size: 13px; }
+        .comparison-header { background: #f5f4ed; font-weight: 600; }
+        .comparison-header > div { color: #3d3d3a; }
+
     </style>
 </head>
 <body>
@@ -735,6 +761,141 @@
             <div class="typography-item"><span class="typo-var">--tiempos-text</span><span class="typo-value">tiemposText</span></div>
             <div class="typography-item"><span class="typo-var">--copernicus</span><span class="typo-value">copernicus</span></div>
             <div class="typography-item"><span class="typo-var">--jetbrains-mono</span><span class="typo-value">jetBrainsMono</span></div>
+        </div>
+    </div>
+
+
+    <!-- Style Guide Section -->
+    <div class="section">
+        <h2>Icon Style Guide</h2>
+        <p class="section-desc">Analysis of the Anthropic icon visual style and AI image generation prompts</p>
+        
+        <h3>Technical Characteristics</h3>
+        <div class="style-grid">
+            <div class="style-card">
+                <div class="style-label">ViewBox</div>
+                <div class="style-value">500x500 or 1000x1000</div>
+            </div>
+            <div class="style-card">
+                <div class="style-label">Fill Mode</div>
+                <div class="style-value">fill="none" on root SVG</div>
+            </div>
+            <div class="style-card">
+                <div class="style-label">Strokes</div>
+                <div class="style-value">None (fill-based only)</div>
+            </div>
+            <div class="style-card">
+                <div class="style-label">Gradients</div>
+                <div class="style-value">None</div>
+            </div>
+        </div>
+
+        <h3>Color Palette</h3>
+        <div class="color-grid">
+            <div class="color-card"><div class="color-swatch" style="background: #141413;"></div><div class="color-info"><div class="color-name">Ink</div><div class="color-hex">#141413</div></div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #E3DACC;"></div><div class="color-info"><div class="color-name">Oat</div><div class="color-hex">#E3DACC</div></div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #FAF9F5;"></div><div class="color-info"><div class="color-name">Cream</div><div class="color-hex">#FAF9F5</div></div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #231F20;"></div><div class="color-info"><div class="color-name">Charcoal</div><div class="color-hex">#231F20</div></div></div>
+        </div>
+
+        <h3>Visual Style</h3>
+        <div class="style-tags">
+            <span class="style-tag">Silhouette Illustration</span>
+            <span class="style-tag">Organic Geometry</span>
+            <span class="style-tag">Warm Minimalism</span>
+            <span class="style-tag">Layered Complexity</span>
+            <span class="style-tag">Human-Centric</span>
+        </div>
+
+        <h3>Key Motifs</h3>
+        <div class="motifs-grid">
+            <div class="motif-card">
+                <div class="motif-icon">🤲</div>
+                <div class="motif-name">The Hand</div>
+                <div class="motif-desc">Human agency, craftsmanship, learning</div>
+            </div>
+            <div class="motif-card">
+                <div class="motif-icon">🔗</div>
+                <div class="motif-name">Connected Nodes</div>
+                <div class="motif-desc">AI, networks, relationships</div>
+            </div>
+            <div class="motif-card">
+                <div class="motif-icon">🌱</div>
+                <div class="motif-name">Organic Forms</div>
+                <div class="motif-desc">Growth, nature, potential</div>
+            </div>
+            <div class="motif-card">
+                <div class="motif-icon">⬡</div>
+                <div class="motif-name">Geometric Shapes</div>
+                <div class="motif-desc">Structure, logic, precision</div>
+            </div>
+        </div>
+
+        <h3>AI Image Generation Prompts</h3>
+        <div class="prompts-grid">
+            <div class="prompt-card">
+                <div class="prompt-title">Hand with Network Nodes</div>
+                <div class="prompt-text">Create a minimalist SVG-style illustration of a human hand with fingertips touching connected network nodes. Silhouette style, solid fills only (no strokes). Hand in #141413, nodes in #E3DACC. Organic curves for hand, geometric circles for nodes. 500x500 viewBox, no gradients.</div>
+            </div>
+            <div class="prompt-card">
+                <div class="prompt-title">Seedling with Geometric Elements</div>
+                <div class="prompt-text">Design an SVG illustration of a young plant seedling emerging from soil, with geometric shapes floating around. Silhouette style, fill-based only. Seedling in #141413, shapes in #E3DACC. Organic curves + geometric forms. 500x500 viewBox.</div>
+            </div>
+            <div class="prompt-card">
+                <div class="prompt-title">Lightbulb with Organic Filament</div>
+                <div class="prompt-text">Design a lightbulb where the filament is an abstract organic form (star or flower). Silhouette style. Bulb glass in #FAF9F5, internal shape in #141413. Concept: ideas, inspiration. 500x500 viewBox.</div>
+            </div>
+            <div class="prompt-card">
+                <div class="prompt-title">Puzzle Piece with Organic Edges</div>
+                <div class="prompt-text">Create an abstract puzzle piece where edges have both geometric and organic flowing curves. Filled with geometric pattern inside. Primary #141413 on #E3DACC background. Concept: problem-solving. 500x500 viewBox.</div>
+            </div>
+            <div class="prompt-card">
+                <div class="prompt-title">Two Hands Holding Geometric Shape</div>
+                <div class="prompt-text">Illustration of two hands from opposite sides holding a floating geometric shape. Silhouette style. Hands in #141413, object in #E3DACC. Concept: collaboration. 500x500 viewBox.</div>
+            </div>
+            <div class="prompt-card">
+                <div class="prompt-title">Sun with Organic Rays</div>
+                <div class="prompt-text">Create a sun where rays are organic flowing shapes (petals or leaves) instead of pointed rays. Silhouette style. Sun circle in #E3DACC, shapes in #141413. Concept: energy, growth. 500x500 viewBox.</div>
+            </div>
+        </div>
+
+        <h3>Generic Style Prompt</h3>
+        <div class="prompt-card prompt-card-large">
+            <div class="prompt-text">Create a vector SVG illustration in the Anthropic design style characterized by: Silhouette illustration style, solid fills only no strokes, no gradients. Colors: near-black ink (#141413) + warm oat (#E3DACC). Subject: [INSERT]. Human + technology themes, organic forms combined with geometric precision. Central focal point, layered complexity, rich detail. Feeling: warm, human, intelligent, craft-forward. 500x500 viewBox, clean SVG code.</div>
+        </div>
+
+        <h3>Comparison with Other Icon Styles</h3>
+        <div class="comparison-table">
+            <div class="comparison-row comparison-header">
+                <div>Aspect</div>
+                <div>Anthropic</div>
+                <div>Flat</div>
+                <div>Line</div>
+            </div>
+            <div class="comparison-row">
+                <div>Fill vs Stroke</div>
+                <div>Fill only</div>
+                <div>Fill + stroke</div>
+                <div>Stroke only</div>
+            </div>
+            <div class="comparison-row">
+                <div>Complexity</div>
+                <div>High</div>
+                <div>Medium</div>
+                <div>Low</div>
+            </div>
+            <div class="comparison-row">
+                <div>Colors</div>
+                <div>2-3</div>
+                <div>Multiple</div>
+                <div>1-2</div>
+            </div>
+            <div class="comparison-row">
+                <div>Organic Feel</div>
+                <div>Yes</div>
+                <div>No</div>
+                <div>No</div>
+            </div>
         </div>
     </div>
 
