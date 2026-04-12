@@ -105,10 +105,34 @@
         .comparison-row > div:not(:first-child) { color: #5e5d59; font-size: 13px; }
         .comparison-header { background: #f5f4ed; font-weight: 600; }
         .comparison-header > div { color: #3d3d3a; }
+        .lang-text { font-size: inherit; }
+        
+        /* Language Switcher */
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; display: flex; gap: 4px; background: #fff; border-radius: 8px; padding: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .lang-btn { padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; cursor: pointer; border: none; background: transparent; color: #5e5d59; transition: all 0.2s; }
+        .lang-btn:hover { background: #f5f4ed; }
+        .lang-btn.active { background: #141413; color: #fff; }
+        
+        /* GitHub Link */
+        .github-link { position: fixed; top: 16px; left: 16px; z-index: 1000; display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-decoration: none; color: #141413; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+        .github-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .github-link svg { width: 20px; height: 20px; }
 
     </style>
 </head>
 <body>
+    <!-- GitHub Link -->
+    <a class="github-link" href="https://github.com/holynova/anthropic-learn-assets" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span>GitHub</span>
+    </a>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="switchLang('zh')">中文</button>
+    </div>
+
     <div class="container">
     <h1>Anthropic Learn</h1>
     <p class="subtitle">Color Palette & Icons - Extracted from <a class="source-link" href="https://www.anthropic.com/learn">Anthropic Learn</a> pages</p>
@@ -148,7 +172,7 @@
 
     <!-- SVG Icons Section -->
     <div class="section">
-        <h2>SVG Icons (29 icons)</h2>
+        <h2>SVG Icons (<span id="iconsCount">29 </span> <span class="lang-text" data-lang-en="icons" data-lang-zh="个图标">icons</span>)</h2>
         <div class="icons-grid">
             <div class="icon-card">
                 <div class="icon-image">
@@ -953,6 +977,322 @@
     </div>
 
     <script>
+    // Language data
+    const langData = {
+        en: {
+            title: 'Anthropic Learn',
+            subtitle: 'Color Palette & Icons - Extracted from <a class="source-link" href="https://www.anthropic.com/learn">Anthropic Learn</a> pages',
+            exportTitle: 'Export Assets',
+            exportDesc: 'Download all icons and color configurations with one click.',
+            exportAll: 'Export All (ZIP)',
+            svgsOnly: 'SVGs Only',
+            colorsOnly: 'Colors Only',
+            cssOnly: 'CSS Only',
+            tailwindOnly: 'Tailwind Config',
+            jsonOnly: 'JSON Only',
+            iconsTitle: 'SVG Icons',
+            iconsCount: 'icons',
+            slateTitle: 'Slate Scale (Neutral)',
+            accentTitle: 'Accent Colors',
+            semanticTitle: 'Semantic Colors',
+            svgColorsTitle: 'SVG Icon Colors',
+            typographyTitle: 'Typography',
+            styleGuideTitle: 'Icon Style Guide',
+            styleGuideDesc: 'Analysis of the Anthropic icon visual style and AI image generation prompts',
+            techCharTitle: 'Technical Characteristics',
+            viewBox: 'ViewBox',
+            viewBoxVal: '500x500 or 1000x1000',
+            fillMode: 'Fill Mode',
+            fillModeVal: 'fill="none" on root SVG',
+            strokes: 'Strokes',
+            strokesVal: 'None (fill-based only)',
+            gradients: 'Gradients',
+            gradientsVal: 'None',
+            colorPalette: 'Color Palette',
+            visualStyle: 'Visual Style',
+            keyMotifs: 'Key Motifs',
+            aiPrompts: 'AI Image Generation Prompts',
+            genericPrompt: 'Generic Style Prompt',
+            comparison: 'Comparison with Other Icon Styles',
+            aspect: 'Aspect',
+            anthropic: 'Anthropic',
+            flat: 'Flat',
+            line: 'Line',
+            footerText: 'Color palette and icons extracted from Anthropic Learn pages using browser inspection of CSS custom properties.',
+            footerPages: 'Pages visited: /learn, /learn/build-with-claude, /learn/claude-for-work, /learn/claude-for-you, /research, /news',
+            copyBtn: 'Copy',
+            copied: 'Copied!',
+            motifHand: 'The Hand',
+            motifHandDesc: 'Human agency, craftsmanship, learning',
+            motifNodes: 'Connected Nodes',
+            motifNodesDesc: 'AI, networks, relationships',
+            motifOrganic: 'Organic Forms',
+            motifOrganicDesc: 'Growth, nature, potential',
+            motifGeometric: 'Geometric Shapes',
+            motifGeometricDesc: 'Structure, logic, precision',
+            fillVsStroke: 'Fill vs Stroke',
+            complexity: 'Complexity',
+            colorCount: 'Colors',
+            organicFeel: 'Organic Feel',
+        },
+        zh: {
+            title: 'Anthropic Learn',
+            subtitle: '配色方案和图标 - 提取自 <a class="source-link" href="https://www.anthropic.com/learn">Anthropic Learn</a> 页面',
+            exportTitle: '导出资源',
+            exportDesc: '一键下载所有图标和配色配置文件',
+            exportAll: '导出全部 (ZIP)',
+            svgsOnly: '仅 SVG 图标',
+            colorsOnly: '仅配色方案',
+            cssOnly: '仅 CSS',
+            tailwindOnly: 'Tailwind 配置',
+            jsonOnly: '仅 JSON',
+            iconsTitle: 'SVG 图标',
+            iconsCount: '个图标',
+            slateTitle: 'Slate 灰度色板',
+            accentTitle: '强调色',
+            semanticTitle: '语义色',
+            svgColorsTitle: 'SVG 图标颜色',
+            typographyTitle: '字体',
+            styleGuideTitle: '图标风格指南',
+            styleGuideDesc: 'Anthropic 图标视觉风格分析与 AI 图像生成提示词',
+            techCharTitle: '技术特征',
+            viewBox: '视窗尺寸',
+            viewBoxVal: '500x500 或 1000x1000',
+            fillMode: '填充模式',
+            fillModeVal: '根 SVG 填充为 none',
+            strokes: '描边',
+            strokesVal: '无 (仅使用填充)',
+            gradients: '渐变',
+            gradientsVal: '无',
+            colorPalette: '配色方案',
+            visualStyle: '视觉风格',
+            keyMotifs: '核心主题',
+            aiPrompts: 'AI 图像生成提示词',
+            genericPrompt: '通用风格提示词',
+            comparison: '与其他图标风格对比',
+            aspect: '方面',
+            anthropic: 'Anthropic',
+            flat: '扁平',
+            line: '线条',
+            footerText: '配色方案和图标通过浏览器检查 CSS 变量从 Anthropic Learn 页面提取',
+            footerPages: '访问的页面: /learn, /learn/build-with-claude, /learn/claude-for-work, /learn/claude-for-you, /research, /news',
+            copyBtn: '复制',
+            copied: '已复制!',
+            motifHand: '手',
+            motifHandDesc: '人类创造力、工艺与学习',
+            motifNodes: '连接节点',
+            motifNodesDesc: 'AI、网络、关系',
+            motifOrganic: '有机形态',
+            motifOrganicDesc: '成长、自然、潜能',
+            motifGeometric: '几何形状',
+            motifGeometricDesc: '结构、逻辑、精确',
+            fillVsStroke: '填充vs描边',
+            complexity: '复杂度',
+            colorCount: '颜色数量',
+            organicFeel: '有机感',
+        }
+    };
+
+    let currentLang = 'en';
+
+    function switchLang(lang) {
+        currentLang = lang;
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        
+        const d = langData[lang];
+        
+        // Update main elements
+        document.querySelector('h1').textContent = d.title;
+        document.querySelector('.subtitle').innerHTML = d.subtitle;
+        document.querySelector('.export-section h2').textContent = d.exportTitle;
+        document.querySelector('.export-section p').textContent = d.exportDesc;
+        document.querySelector('.section > h2').textContent = d.iconsTitle;
+        
+        // Update button labels
+        const exportBtns = document.querySelectorAll('.export-btn');
+        exportBtns[0].innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>${d.exportAll}`;
+        exportBtns[1].innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>${d.svgsOnly}`;
+        exportBtns[2].innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>${d.colorsOnly}`;
+        exportBtns[3].innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>${d.cssOnly}`;
+        exportBtns[4].innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>${d.tailwindOnly}`;
+        exportBtns[5].innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" /></svg>${d.jsonOnly}`;
+        
+        // Update color sections
+        const sections = document.querySelectorAll('.section h2');
+        sections.forEach((sec, i) => {
+            if (sec.textContent.includes('Slate Scale')) sec.textContent = d.slateTitle;
+            if (sec.textContent.includes('Accent')) sec.textContent = d.accentTitle;
+            if (sec.textContent.includes('Semantic')) sec.textContent = d.semanticTitle;
+            if (sec.textContent.includes('SVG Icon Colors')) sec.textContent = d.svgColorsTitle;
+            if (sec.textContent.includes('Typography')) sec.textContent = d.typographyTitle;
+        });
+        
+        // Update style guide
+        const styleGuideH2 = document.querySelectorAll('.section h2');
+        styleGuideH2.forEach(h2 => {
+            if (h2.textContent.includes('Icon Style Guide')) h2.textContent = d.styleGuideTitle;
+        });
+        
+        const sectionDesc = document.querySelector('.section-desc');
+        if (sectionDesc) sectionDesc.textContent = d.styleGuideDesc;
+        
+        // Update style guide content
+        const h3s = document.querySelectorAll('.section h3');
+        h3s.forEach(h3 => {
+            if (h3.textContent.includes('Technical')) h3.textContent = d.techCharTitle;
+            if (h3.textContent.includes('Color Palette')) h3.textContent = d.colorPalette;
+            if (h3.textContent.includes('Visual Style')) h3.textContent = d.visualStyle;
+            if (h3.textContent.includes('Key Motifs')) h3.textContent = d.keyMotifs;
+            if (h3.textContent.includes('AI Image')) h3.textContent = d.aiPrompts;
+            if (h3.textContent.includes('Generic')) h3.textContent = d.genericPrompt;
+            if (h3.textContent.includes('Comparison')) h3.textContent = d.comparison;
+        });
+        
+        // Update style cards
+        const styleLabels = document.querySelectorAll('.style-label');
+        styleLabels.forEach(label => {
+            if (label.textContent === 'ViewBox') label.textContent = d.viewBox;
+            if (label.textContent === 'Fill Mode') label.textContent = d.fillMode;
+            if (label.textContent === 'Strokes') label.textContent = d.strokes;
+            if (label.textContent === 'Gradients') label.textContent = d.gradients;
+        });
+        const styleValues = document.querySelectorAll('.style-value');
+        styleValues.forEach(val => {
+            if (val.textContent === '500x500 or 1000x1000') val.textContent = d.viewBoxVal;
+            if (val.textContent === 'fill="none" on root SVG') val.textContent = d.fillModeVal;
+            if (val.textContent === 'None (fill-based only)') val.textContent = d.strokesVal;
+            if (val.textContent === 'None') val.textContent = d.gradientsVal;
+        });
+        
+        // Update style tags
+        document.querySelectorAll('.style-tag').forEach(tag => {
+            if (tag.textContent === 'Silhouette Illustration') tag.textContent = lang === 'zh' ? '剪影插画' : 'Silhouette Illustration';
+            if (tag.textContent === 'Organic Geometry') tag.textContent = lang === 'zh' ? '有机几何' : 'Organic Geometry';
+            if (tag.textContent === 'Warm Minimalism') tag.textContent = lang === 'zh' ? '温暖极简' : 'Warm Minimalism';
+            if (tag.textContent === 'Layered Complexity') tag.textContent = lang === 'zh' ? '层叠复杂度' : 'Layered Complexity';
+            if (tag.textContent === 'Human-Centric') tag.textContent = lang === 'zh' ? '以人为本' : 'Human-Centric';
+        });
+        
+        // Update motifs
+        const motifNames = document.querySelectorAll('.motif-name');
+        motifNames.forEach(name => {
+            if (name.textContent === 'The Hand') name.textContent = d.motifHand;
+            if (name.textContent === 'Connected Nodes') name.textContent = d.motifNodes;
+            if (name.textContent === 'Organic Forms') name.textContent = d.motifOrganic;
+            if (name.textContent === 'Geometric Shapes') name.textContent = d.motifGeometric;
+        });
+        const motifDescs = document.querySelectorAll('.motif-desc');
+        motifDescs.forEach(desc => {
+            if (desc.textContent === 'Human agency, craftsmanship, learning') desc.textContent = d.motifHandDesc;
+            if (desc.textContent === 'AI, networks, relationships') desc.textContent = d.motifNodesDesc;
+            if (desc.textContent === 'Growth, nature, potential') desc.textContent = d.motifOrganicDesc;
+            if (desc.textContent === 'Structure, logic, precision') desc.textContent = d.motifGeometricDesc;
+        });
+        
+        // Update comparison table
+        const comparisonRows = document.querySelectorAll('.comparison-row > div');
+        comparisonRows.forEach(cell => {
+            if (cell.textContent === 'Aspect') cell.textContent = d.aspect;
+            if (cell.textContent === 'Anthropic') cell.textContent = d.anthropic;
+            if (cell.textContent === 'Flat') cell.textContent = d.flat;
+            if (cell.textContent === 'Line') cell.textContent = d.line;
+            if (cell.textContent === 'Fill vs Stroke') cell.textContent = d.fillVsStroke;
+            if (cell.textContent === 'Complexity') cell.textContent = d.complexity;
+            if (cell.textContent === 'Colors') cell.textContent = d.colorCount;
+            if (cell.textContent === 'Organic Feel') cell.textContent = d.organicFeel;
+            if (cell.textContent === 'Fill only') cell.textContent = lang === 'zh' ? '仅填充' : 'Fill only';
+            if (cell.textContent === 'Fill + stroke') cell.textContent = lang === 'zh' ? '填充+描边' : 'Fill + stroke';
+            if (cell.textContent === 'Stroke only') cell.textContent = lang === 'zh' ? '仅描边' : 'Stroke only';
+            if (cell.textContent === 'High') cell.textContent = lang === 'zh' ? '高' : 'High';
+            if (cell.textContent === 'Medium') cell.textContent = lang === 'zh' ? '中' : 'Medium';
+            if (cell.textContent === 'Low') cell.textContent = lang === 'zh' ? '低' : 'Low';
+            if (cell.textContent === '2-3') cell.textContent = lang === 'zh' ? '2-3' : '2-3';
+            if (cell.textContent === 'Multiple') cell.textContent = lang === 'zh' ? '多种' : 'Multiple';
+            if (cell.textContent === '1-2') cell.textContent = lang === 'zh' ? '1-2' : '1-2';
+            if (cell.textContent === 'Yes') cell.textContent = lang === 'zh' ? '有' : 'Yes';
+            if (cell.textContent === 'No') cell.textContent = lang === 'zh' ? '无' : 'No';
+        });
+        
+        // Update color names
+        const colorNames = document.querySelectorAll('.color-name');
+        const colorHexs = document.querySelectorAll('.color-hex');
+        const accentNames = document.querySelectorAll('.accent-name');
+        const semanticNames = document.querySelectorAll('.semantic-name');
+        const typoVars = document.querySelectorAll('.typo-var');
+        
+        // Color name translations
+        const colorNameMap = {
+            'slate-050': lang === 'zh' ? 'slate-050' : 'slate-050',
+            'slate-100': lang === 'zh' ? 'slate-100' : 'slate-100',
+            'slate-150': lang === 'zh' ? 'slate-150' : 'slate-150',
+            'slate-200': lang === 'zh' ? 'slate-200' : 'slate-200',
+            'slate-250': lang === 'zh' ? 'slate-250' : 'slate-250',
+            'slate-300': lang === 'zh' ? 'slate-300' : 'slate-300',
+            'slate-350': lang === 'zh' ? 'slate-350' : 'slate-350',
+            'slate-400': lang === 'zh' ? 'slate-400' : 'slate-400',
+            'slate-450': lang === 'zh' ? 'slate-450' : 'slate-450',
+            'slate-500': lang === 'zh' ? 'slate-500' : 'slate-500',
+            'slate-550': lang === 'zh' ? 'slate-550' : 'slate-550',
+            'slate-600': lang === 'zh' ? 'slate-600' : 'slate-600',
+            'slate-650': lang === 'zh' ? 'slate-650' : 'slate-650',
+            'slate-700': lang === 'zh' ? 'slate-700' : 'slate-700',
+            'slate-750': lang === 'zh' ? 'slate-750' : 'slate-750',
+            'slate-800': lang === 'zh' ? 'slate-800' : 'slate-800',
+            'slate-850': lang === 'zh' ? 'slate-850' : 'slate-850',
+            'slate-900': lang === 'zh' ? 'slate-900' : 'slate-900',
+            'slate-950': lang === 'zh' ? 'slate-950' : 'slate-950',
+            'slate-1000': lang === 'zh' ? 'slate-1000' : 'slate-1000',
+            'light': lang === 'zh' ? '浅色' : 'light',
+            'dark': lang === 'zh' ? '深色' : 'dark',
+            'slate-dark': lang === 'zh' ? '深灰' : 'slate-dark',
+            'oat': lang === 'zh' ? '燕麦' : 'oat',
+            'coral': lang === 'zh' ? '珊瑚' : 'coral',
+            'clay': lang === 'zh' ? '陶土' : 'clay',
+            'cactus': lang === 'zh' ? '仙人掌' : 'cactus',
+            'fig': lang === 'zh' ? '无花果' : 'fig',
+            'sky': lang === 'zh' ? '天空' : 'sky',
+            'olive': lang === 'zh' ? '橄榄' : 'olive',
+            'heather': lang === 'zh' ? '石南' : 'heather',
+            'error': lang === 'zh' ? '错误' : 'error',
+            'focus': lang === 'zh' ? '焦点' : 'focus',
+        };
+        
+        colorNames.forEach(el => {
+            const originalName = el.textContent;
+            if (colorNameMap[originalName]) {
+                el.textContent = colorNameMap[originalName];
+            }
+        });
+        
+        accentNames.forEach(el => {
+            const originalName = el.textContent;
+            if (colorNameMap[originalName]) {
+                el.textContent = colorNameMap[originalName];
+            }
+        });
+        
+        semanticNames.forEach(el => {
+            const originalName = el.textContent;
+            if (colorNameMap[originalName]) {
+                el.textContent = colorNameMap[originalName];
+            }
+        });
+        
+        // Update footer
+        const footerPs = document.querySelectorAll('footer p');
+        if (footerPs[0]) footerPs[0].textContent = d.footerText;
+        if (footerPs[1]) footerPs[1].textContent = d.footerPages;
+        
+        // Update copy buttons
+        document.querySelectorAll('.copy-btn span').forEach(span => {
+            if (span.textContent === 'Copy' || span.textContent === '复制') {
+                span.textContent = d.copyBtn;
+            }
+        });
+    }
+
     function copyPrompt(btn) {
         const promptText = btn.closest('.prompt-card').querySelector('.prompt-text').textContent;
         navigator.clipboard.writeText(promptText).then(() => {
