@@ -4,7 +4,7 @@ A collection of SVG icons and color palette extracted from Anthropic's Learn pag
 
 ## Live Demo
 
-**View the interactive showcase:** https://holynova.github.io/anthropic-learn-assets/
+**View the interactive showcase:** https://anthropic-learn-assets.xiaosang.cc/
 
 ## Quick Export
 
@@ -51,7 +51,7 @@ anthropic_learn_assets/
 
 ### View Online
 
-Visit the live demo: **https://holynova.github.io/anthropic-learn-assets/**
+Visit the live demo: **https://anthropic-learn-assets.xiaosang.cc/**
 
 ### View Locally
 
@@ -178,7 +178,7 @@ The following SVG icons are available in the `svgs/` directory:
 ### View the Interactive Demo
 
 Open `index.html` in any modern web browser or visit:
-**https://holynova.github.io/anthropic-learn-assets/**
+**https://anthropic-learn-assets.xiaosang.cc/**
 
 ### Use Individual SVG Icons
 
@@ -227,10 +227,10 @@ module.exports = {
 
 ## Deployment
 
-This project uses GitHub Actions to automatically deploy to GitHub Pages on every push to `main`.
+The canonical demo is deployed as Cloudflare Workers Static Assets from the tracked `dist/` directory with Wrangler.
 
-- **Live Demo:** https://holynova.github.io/anthropic-learn-assets/
-- **GitHub Pages Settings:** https://github.com/holynova/anthropic-learn-assets/settings/pages
+- **Live Demo:** https://anthropic-learn-assets.xiaosang.cc/
+- **Worker config:** `wrangler.jsonc`
 
 ## License
 

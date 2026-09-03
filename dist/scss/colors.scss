@@ -1,0 +1,93 @@
+// Anthropic Learn Color Palette - SCSS Variables
+// Generated from: https://www.anthropic.com/learn
+
+// Slate Scale (Neutral)
+$color-slate-050: #faf9f5;
+$color-slate-100: #f5f4ed;
+$color-slate-150: #f0eee6;
+$color-slate-200: #e8e6dc;
+$color-slate-250: #dedcd1;
+$color-slate-300: #d1cfc5;
+$color-slate-350: #c2c0b6;
+$color-slate-400: #b0aea5;
+$color-slate-450: #9c9a92;
+$color-slate-500: #87867f;
+$color-slate-550: #73726c;
+$color-slate-600: #5e5d59;
+$color-slate-650: #4d4c48;
+$color-slate-700: #3d3d3a;
+$color-slate-750: #30302e;
+$color-slate-800: #262624;
+$color-slate-850: #1f1e1d;
+$color-slate-900: #1a1918;
+$color-slate-950: #141413;
+$color-slate-1000: #0f0f0e;
+
+// Accent Colors
+$color-light: #ffffff;
+$color-dark: #0f0f0e;
+$color-slate-dark: #141413;
+$color-oat: #e3dacc;
+$color-coral: #ebcece;
+$color-clay: #d97757;
+$color-cactus: #bcd1ca;
+$color-fig: #c46686;
+$color-sky: #6a9bcc;
+$color-olive: #788c5d;
+$color-heather: #cbcadb;
+
+// Semantic Colors
+$color-error: #bf4d43;
+$color-focus: #2c84db;
+
+// SVG Icon Colors
+$svg-color-black: #000000;
+$svg-color-cream: #faf9f7;
+$svg-color-charcoal: #181818;
+$svg-color-ink: #141413;
+$svg-color-near-black: #0f0f0e;
+$svg-color-moss: #535146;
+
+// Map for iteration
+$anthropic-colors: (
+  'slate-050': $color-slate-050,
+  'slate-100': $color-slate-100,
+  'slate-150': $color-slate-150,
+  'slate-200': $color-slate-200,
+  'slate-250': $color-slate-250,
+  'slate-300': $color-slate-300,
+  'slate-350': $color-slate-350,
+  'slate-400': $color-slate-400,
+  'slate-450': $color-slate-450,
+  'slate-500': $color-slate-500,
+  'slate-550': $color-slate-550,
+  'slate-600': $color-slate-600,
+  'slate-650': $color-slate-650,
+  'slate-700': $color-slate-700,
+  'slate-750': $color-slate-750,
+  'slate-800': $color-slate-800,
+  'slate-850': $color-slate-850,
+  'slate-900': $color-slate-900,
+  'slate-950': $color-slate-950,
+  'slate-1000': $color-slate-1000,
+  'light': $color-light,
+  'dark': $color-dark,
+  'slate-dark': $color-slate-dark,
+  'oat': $color-oat,
+  'coral': $color-coral,
+  'clay': $color-clay,
+  'cactus': $color-cactus,
+  'fig': $color-fig,
+  'sky': $color-sky,
+  'olive': $color-olive,
+  'heather': $color-heather,
+  'error': $color-error,
+  'focus': $color-focus,
+);
+
+// CSS Custom Properties export
+:root {
+  @each $name, $color in $anthropic-colors {
+    --color-#{$name}: #{$color};
+  }
+}
